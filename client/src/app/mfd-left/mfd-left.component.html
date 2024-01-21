@@ -1,0 +1,34 @@
+<div style="background-color:olivedrab; width:1024pt; height:1024pt">
+
+
+<div style="color:lightgreen"  >LEFT - {{aircraftName}}</div>
+ 
+<app-Altimeter style="position: absolute;left:260px; top:80px" [minor-segment-count]="50" [units]="' ft'" label="ALTITUDE" [currentValue]="23450"></app-Altimeter>
+
+<app-variometer [radius]="150" [currentValue]="0" style="position: absolute;left: 510px; top:330px"></app-variometer>
+
+<span stye="position:absolute;top 510px; left:250px;color:white">Fuel</span>
+
+<app-RadialGauge [segment-count]="4" [start]="245" [degrees]="230" [max]="92" [units]="' gal'" [minor-segment-count]="12"
+[system]="'Fuel System'" [field]="'FUEL_TANK_RIGHT'"
+[red-start]="0" [red-end]="5" [marker-font-size]="12" [radius]="60" label="Left" 
+  style="position: absolute;left: 30px; top:380px"></app-RadialGauge>
+
+<app-RadialGauge [segment-count]="4" [start]="245" [degrees]="230" [max]="92" [units]="' gal'" [minor-segment-count]="12"
+  [system]="'Fuel System'" [field]="'ngFUEL_TANK_RIGHT'" [red-start]="0" [red-end]="5" [marker-font-size]="12" [radius]="60" label="Right"  
+  style="position: absolute;left: 280px; top:380px"></app-RadialGauge>
+
+<app-RadialGauge [start]="260" [degrees]="300" [minor-segment-count]="50" [segment-count]="10" [units]="' in Hg'" [min]="0" [max]="70" [radius]="100" 
+  [green-start]="26" [green-end]="36" label="MANIFOLD" [currentValue]="manifoldPressure" 
+  style="position: absolute;left: 260px; top:330px"></app-RadialGauge>
+
+<div>
+  Fuel Valve
+</div>
+<div>
+  <button (click)="setValue('FUEL_SELECTOR_VALVE',0)">Off</button>
+  <button (click)="setValue('FUEL_SELECTOR_VALVE',1)">Left</button>
+  <button (click)="setValue('FUEL_SELECTOR_VALVE',2)">Fuselage</button>
+  <button (click)="setValue('FUEL_SELECTOR_VALVE',3)">Right</button>
+</div>
+</div>

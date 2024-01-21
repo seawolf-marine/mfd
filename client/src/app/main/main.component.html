@@ -1,0 +1,16 @@
+<app-RadialGauge [start]="0" [degrees]="280" [units]="' mph'" [segment-count]="7" [minor-segment-count]="35" label="M.P.H." 
+   [currentValue]="airspeed" [max]="700" [radius]="215"
+   [red-start]="510" [red-end]="700" style="position: absolute;left:160px"></app-RadialGauge>
+      
+
+<app-aoa-gauge style="position:absolute; left:712px;top:10px " [caged]="caged" [pitch]="pitch" [bank]="bank" ></app-aoa-gauge>
+<button style="position:absolute; left:960px;top:400px;height:40px " (click)="toggleCaged()">CAGE</button>
+
+<app-Altimeter style="left:1270px;position: absolute;top:5px" [radius]="215" [minor-segment-count]="50" [units]="' ft'"  label="ALTITUDE" [currentValue]="altitude"></app-Altimeter>
+
+<app-turn-slip [radius]="215" [turn]="turn" [slip]="slip" style="position: absolute;left: 170px; top:560px"></app-turn-slip>  
+
+<app-RadialGauge [start]="0" [degrees]="360" [radius]="215" [units]="' deg'" label="HDG" [currentValue]="heading" [max]="360" 
+      style="left:720px;position: absolute;top:560px"></app-RadialGauge>
+
+<app-variometer [radius]="215" [currentValue]="climbRate" style="position: absolute;left: 1275px; top:560px"></app-variometer>
