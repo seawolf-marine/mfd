@@ -19,8 +19,9 @@ const wss = new WebSocket.Server({server});
 let clients = [];
 
 wss.on('connection', function (client) {
-  clients.push(client);  
+  client.lastUpdated = new Date();
   client.clientIndex = clientIndex++;
+  clients.push(client);  
   
   client.on('message', function (data) {  
     client.lastUpdated = new Date();
